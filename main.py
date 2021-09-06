@@ -71,7 +71,7 @@ class ScreenDownloader(webdriver.Chrome):
         test = self.find_element_by_xpath(TEST_XPATH)
         img_src = img.get_attribute("src")
         test_src = test.get_attribute("src")
-        if not (img_src == BLACKLISTED_URL1 or img_src == url or test):
+        if not (img_src == BLACKLISTED_URL1 or img_src == url or test_src == BLACKLISTED_URL2):
             print(f"{url} +")
             # img.screenshot(f"C:\\Users\\User\\PycharmProjects\\prntsc_online_scapper\\file-{url}.png")
             with open(f"img-{url.split('/')[-1]}.png", "wb") as f:
